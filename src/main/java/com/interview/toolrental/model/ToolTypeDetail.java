@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class Brand {
+public class ToolTypeDetail {
     private String dailyCharge;
     private boolean weekdayCharge;
     private boolean weekendCharge;

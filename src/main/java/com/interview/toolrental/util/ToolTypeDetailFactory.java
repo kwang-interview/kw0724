@@ -1,10 +1,10 @@
 package com.interview.toolrental.util;
 
-import com.interview.toolrental.model.Brand;
+import com.interview.toolrental.model.ToolTypeDetail;
 
-public class BrandFactory {
-    public static Brand generateLadder() {
-        return Brand.builder()
+public class ToolTypeDetailFactory {
+    public static ToolTypeDetail generateLadder() {
+        return ToolTypeDetail.builder()
                 .dailyCharge("1.99")
                 .weekdayCharge(true)
                 .weekendCharge(true)
@@ -12,8 +12,8 @@ public class BrandFactory {
                 .build();
     }
 
-    public static Brand generateChainsaw() {
-        return Brand.builder()
+    public static ToolTypeDetail generateChainsaw() {
+        return ToolTypeDetail.builder()
                 .dailyCharge("1.49")
                 .weekdayCharge(true)
                 .weekendCharge(false)
@@ -21,8 +21,8 @@ public class BrandFactory {
                 .build();
     }
 
-    public static Brand generateJackhammer() {
-        return Brand.builder()
+    public static ToolTypeDetail generateJackhammer() {
+        return ToolTypeDetail.builder()
                 .dailyCharge("2.99")
                 .weekdayCharge(true)
                 .weekendCharge(false)

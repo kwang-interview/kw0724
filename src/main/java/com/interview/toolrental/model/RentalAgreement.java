@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Data
 @Builder
@@ -23,6 +24,8 @@ public class RentalAgreement {
 
     @Override
     public String toString() {
+        var formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+
         return String.format("""
                 Tool code: %s
                 Tool type: %s
@@ -33,7 +36,7 @@ public class RentalAgreement {
                 Daily rental charge: $%s
                 Charge days: %d
                 Pre-discount charge: $%s
-                Discount percent: %s\\%
+                Discount percent: %s%%
                 Discount amount: $%s
                 Final charge: $%s
                 """,
@@ -41,13 +44,17 @@ public class RentalAgreement {
                 toolType,
                 toolBrand,
                 rentalDays,
-                checkoutDate.toString(),
-                dueDate.toString(),
+                formatter.format(checkoutDate),
+                formatter.format(dueDate),
                 dailyRentalCharge,
                 chargeDays,
                 prediscountCharge,
                 discountPercent,
                 discountAmount,
                 finalCharge);
+    }
+
+    public void debug() {
+        System.out.println(this);
     }
 }
